@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CoinLogical : MonoBehaviour
 {
-    [SerializeField] public int Coin = 0;
+    public static int Coin = 1000;
 
 
 
@@ -16,14 +16,14 @@ public class CoinLogical : MonoBehaviour
         {
             AddCoin();
             Destroy(other.gameObject);
-            Debug.Log("1");
+         
         }
 
         if (other.CompareTag("DoubleCoins"))
         {
             DoubleCoin();
             Destroy(other.gameObject);
-            Debug.Log("2");
+           
 
         }
     }
