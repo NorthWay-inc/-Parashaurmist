@@ -4,6 +4,7 @@ using UniRx;
 public class CoinLogical : MonoBehaviour
 {
     public static IntReactiveProperty Coin = new IntReactiveProperty (1000);
+    [SerializeField] private GameObject Data;
 
 
 
