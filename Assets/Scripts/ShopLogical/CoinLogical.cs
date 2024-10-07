@@ -1,13 +1,14 @@
 using UnityEngine;
+using UniRx;
 
 public class CoinLogical : MonoBehaviour
 {
-    public static int Coin = 1000;
+    public static IntReactiveProperty Coin = new IntReactiveProperty (1000);
 
 
 
-    private void AddCoin() { Coin++; }
-    private void DoubleCoin() { Coin*=2; }
+    private void AddCoin() { Coin.Value ++; }
+    private void DoubleCoin() { Coin.Value *=2; }
 
 
     private void OnTriggerEnter2D(Collider2D other)
