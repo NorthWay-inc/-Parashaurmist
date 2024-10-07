@@ -4,7 +4,7 @@ public class CoinLogical : MonoBehaviour
 {
     public static int Coin = 1000;
 
-
+    [SerializeField] private GameObject Data;
 
     private void AddCoin() { Coin++; }
     private void DoubleCoin() { Coin*=2; }

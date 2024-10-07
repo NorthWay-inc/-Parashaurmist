@@ -17,6 +17,7 @@ public class main_script : MonoBehaviour
     private GameObject Curient_prefab;
     private int List_leight;
     private Quaternion Prefabs_rotation;
+    [SerializeField] private GameObject shop;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class main_script : MonoBehaviour
     public IEnumerator Spawner()
     {
         Debug.Log("1.1");
-        Curient_prefab = Instantiate(Prefab_list[UnityEngine.Random.Range(0, List_leight - 1)], new Vector2(0, Player.transform.position.y - 10), Prefabs_rotation);
+        Curient_prefab = Instantiate(Prefab_list[UnityEngine.Random.Range(0, List_leight - 1)], new Vector2(0, Player.transform.position.y - (5 * (4 - shop.GetComponent<ShopLogical>().LvlCountCoin))), Prefabs_rotation);
         while (working)
         {
             if (Curient_prefab.transform.position.y < 14)
@@ -40,7 +41,7 @@ public class main_script : MonoBehaviour
             else if (Curient_prefab.transform.position.y > 14)
             {
                 Debug.Log("1.3");
-                Curient_prefab = Instantiate(Prefab_list[UnityEngine.Random.Range(0, List_leight)], new Vector2(0, Curient_prefab.transform.position.y - 15), Prefabs_rotation);
+                Curient_prefab = Instantiate(Prefab_list[UnityEngine.Random.Range(0, List_leight)], new Vector2(0, Curient_prefab.transform.position.y - (10 * (4 - shop.GetComponent<ShopLogical>().LvlCountCoin))), Prefabs_rotation);
             }
             yield return new WaitForFixedUpdate();
         }
