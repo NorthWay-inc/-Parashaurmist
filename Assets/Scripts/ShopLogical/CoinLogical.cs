@@ -6,7 +6,6 @@ public class CoinLogical : MonoBehaviour
     public static IntReactiveProperty Coin = new IntReactiveProperty (1000);
     [SerializeField] private GameObject Data;
 
-    [SerializeField] private GameObject Data;
 
     private void AddCoin() { Coin.Value ++; }
     private void DoubleCoin() { Coin.Value *=2; }
